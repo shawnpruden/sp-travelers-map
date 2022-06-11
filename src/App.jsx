@@ -37,7 +37,6 @@ function App() {
   useEffect(() => {
     if (Object.keys(bounds).length) {
       const identifier = setTimeout(() => {
-        console.log('data is coming');
         setFilteredPlaces([]);
 
         getPlaceData(type, bounds.ne, bounds.sw).then((data) => {
@@ -71,16 +70,6 @@ function App() {
       return () => clearTimeout(identifier);
     }
   }, [coords]);
-
-  console.log(
-    '%cLogged',
-    'color: #ffcb6b; margin: 0.2rem',
-    '\n',
-    places,
-    type,
-    rating,
-    coords
-  );
 
   return (
     <ThemeProvider theme={theme}>
