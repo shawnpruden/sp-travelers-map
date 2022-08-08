@@ -52,31 +52,37 @@ function List({
             <Grid item xs={12} style={today}>
               <Box sx={flexColumn}>
                 <Typography variant="subtitle2" fontSize="1rem">
-                  {weather.city.name}
+                  {weather.city_name}
                 </Typography>
                 <Typography variant="h3">
-                  {Math.round(weather.list[0].temp.day)}&deg;
+                  {Math.round(weather.data[0].temp)}&deg;
                 </Typography>
               </Box>
-              <Box sx={{ ...flexColumn, alignItems: 'flex-end' }}>
+              <Box
+                sx={{
+                  ...flexColumn,
+                  alignItems: 'flex-end',
+                  justifyContent: 'space-evenly',
+                }}
+              >
                 <img
-                  src={`http://openweathermap.org/img/wn/${weather.list[0].weather[0].icon}.png`}
-                  alt={weather.list[0].weather[0].description}
+                  src={`https://www.weatherbit.io/static/img/icons/${weather.data[0].weather.icon}.png`}
+                  alt={weather.data[0].weather.description}
                   style={image}
                 />
                 <Typography variant="subtitle2">
-                  {weather.list[0].weather[0].main} ({weather.list[0].humidity}
+                  {weather.data[0].weather.description} ({weather.data[0].rh}
                   %)
                 </Typography>
 
                 <Typography variant="subtitle2">
-                  H:{Math.round(weather.list[0].temp.max)}&deg; L:
-                  {Math.round(weather.list[0].temp.min)}&deg;
+                  H:{Math.round(weather.data[0].max_temp)}&deg; L:
+                  {Math.round(weather.data[0].min_temp)}&deg;
                 </Typography>
               </Box>
             </Grid>
 
-            {weather.list.slice(1).map((data, index) => (
+            {weather.data.slice(1, 8).map((data, index) => (
               <Grid item xs={12} key={index} style={{ padding: '0.5rem 1rem' }}>
                 <WeatherDetails data={data} />
               </Grid>

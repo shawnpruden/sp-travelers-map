@@ -4,8 +4,6 @@ export const title = {
   display: { xs: 'none', sm: 'block' },
 
   alignSelf: 'center',
-
-  textShadow: '0 0 5px #fff',
 };
 
 export const toolbar = {
@@ -29,7 +27,6 @@ export const search = {
   },
 
   borderRadius: 1,
-  boxShadow: '0 0 5px #fff',
 
   backgroundColor: (theme) => alpha(theme.palette.common.white, 0.15),
 

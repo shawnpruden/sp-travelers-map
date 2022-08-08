@@ -8,20 +8,15 @@ export const today = {
   justifyContent: 'space-between',
 };
 
-export const formControl = {
-  display: 'flex',
-  justifyContent: 'space-evenly',
-
-  mt: 1.5,
-  mb: 2,
-};
-
 export const weatherList = {
   height: '25vh',
   px: 4,
   pb: 1,
 
   overflow: 'auto',
+  '&::-webkit-scrollbar': {
+    display: 'none',
+  },
 
   opacity: 0.8,
   color: '#fff',
@@ -30,9 +25,21 @@ export const weatherList = {
   boxShadow: '0 0 10px #673ab7',
 };
 
+export const formControl = {
+  height: '10vh',
+
+  display: 'flex',
+  justifyContent: 'space-evenly',
+  alignItems: 'center',
+};
+
 export const placesList = {
   height: '50vh',
+
   overflow: 'auto',
+  '&::-webkit-scrollbar': {
+    display: 'none',
+  },
 
   opacity: 0.9,
   bgcolor: '#7e57c2',
@@ -46,8 +53,8 @@ export const flexColumn = {
 
 export const image = {
   display: 'block',
-  width: '30px',
-  height: '30px',
+  width: '25px',
+  height: '25px',
 };
 
 export const loader = {

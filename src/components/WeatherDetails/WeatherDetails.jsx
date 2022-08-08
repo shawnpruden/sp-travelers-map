@@ -2,12 +2,13 @@ import React from 'react';
 
 import { Box, Card, Typography } from '@mui/material';
 
-import { card, content } from './styles';
+import { card, content, image } from './styles';
 
 function WeatherDetails({ data }) {
-  const day = new Date(data.dt * 1000).toLocaleString('en-us', {
+  const day = new Intl.DateTimeFormat('en-US', {
     weekday: 'short',
-  });
+    timeZone: 'UTC',
+  }).format(new Date(data.valid_date));
 
   return (
     <Card elevation={0} sx={card}>
@@ -15,14 +16,15 @@ function WeatherDetails({ data }) {
         <Typography variant="subtitle2">{day}</Typography>
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
           <img
-            src={`http://openweathermap.org/img/wn/${data.weather[0].icon}.png`}
-            alt={data.weather[0].description}
+            src={`https://www.weatherbit.io/static/img/icons/${data.weather.icon}.png`}
+            alt={data.weather.description}
+            style={image}
           />
-          <Typography variant="caption">({data.humidity}%)</Typography>
+          <Typography variant="caption">({data.rh}%)</Typography>
         </Box>
 
         <Typography variant="subtitle2">
-          {Math.round(data.temp.min)}&deg; — {Math.round(data.temp.max)}&deg;
+          {Math.round(data.min_temp)}&deg; — {Math.round(data.max_temp)}&deg;
         </Typography>
       </Box>
     </Card>

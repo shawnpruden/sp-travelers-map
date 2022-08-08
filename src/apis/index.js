@@ -33,11 +33,9 @@ export const getPlaceData = async (type, ne, sw) => {
 export const getWeatherData = async (lat, lng) => {
   try {
     const { data } = await axios.get(
-      'https://community-open-weather-map.p.rapidapi.com/forecast/daily',
+      'https://weatherbit-v1-mashape.p.rapidapi.com/forecast/daily',
       {
         params: {
-          cnt: '8',
-
           lat: lat,
           lon: lng,
 
@@ -45,7 +43,7 @@ export const getWeatherData = async (lat, lng) => {
         },
         headers: {
           'X-RapidAPI-Key': process.env.REACT_APP_RAPID_API_KEY,
-          'X-RapidAPI-Host': 'community-open-weather-map.p.rapidapi.com',
+          'X-RapidAPI-Host': 'weatherbit-v1-mashape.p.rapidapi.com',
         },
       }
     );
