@@ -25,7 +25,7 @@ function Map({ coords, places, handleMapChange, handleChildClicked }) {
             ? coords
             : { lat: 49.246292, lng: -123.116226 }
         }
-        defaultZoom={12}
+        zoom={Object.keys(coords).length ? 12 : 10}
         margin={[50, 50, 50, 50]}
         options={{
           zoomControl: true,
