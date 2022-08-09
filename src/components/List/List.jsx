@@ -30,9 +30,9 @@ function List({
   places,
   childClicked,
   type,
-  setType,
   rating,
-  setRating,
+  handleSetType,
+  handleSetRating,
 }) {
   const [placeRefs, setPlaceRefs] = useState([]);
 
@@ -98,7 +98,7 @@ function List({
       <Box sx={formControl}>
         <FormControl sx={{ minWidth: 120 }} variant="standard">
           <InputLabel>Type</InputLabel>
-          <Select value={type} onChange={(e) => setType(e.target.value)}>
+          <Select value={type} onChange={handleSetType}>
             <MenuItem value="restaurants">Restaurants</MenuItem>
             <MenuItem value="hotels">Hotels</MenuItem>
             <MenuItem value="attractions">Attractions</MenuItem>
@@ -107,7 +107,7 @@ function List({
 
         <FormControl sx={{ minWidth: 120 }} variant="standard">
           <InputLabel>Rating</InputLabel>
-          <Select value={rating} onChange={(e) => setRating(e.target.value)}>
+          <Select value={rating} onChange={handleSetRating}>
             <MenuItem value={0}>All</MenuItem>
             <MenuItem value={3}>Above 3 stars</MenuItem>
             <MenuItem value={4}>Above 4 stars</MenuItem>

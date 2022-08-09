@@ -12,6 +12,8 @@ export const markerContainer = {
   position: 'absolute',
   zIndex: 1,
 
+  opacity: 0,
+
   transform: 'translate(-50%, -50%)',
 
   transition: '0.3s',

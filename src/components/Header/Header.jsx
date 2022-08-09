@@ -8,14 +8,14 @@ import SearchIcon from '@mui/icons-material/Search';
 
 import { title, toolbar, search, searchIcon, input } from './styles';
 
-function Header({ setCoords }) {
+function Header({ handleSetCoords }) {
   const [autocomplete, setAutocomplete] = useState(null);
 
-  const onPlaceChanged = () => {
+  const handlePlaceChanged = () => {
     const lat = autocomplete.getPlace().geometry.location.lat();
     const lng = autocomplete.getPlace().geometry.location.lng();
 
-    setCoords({ lat, lng });
+    handleSetCoords({ lat, lng });
   };
 
   return (
@@ -30,7 +30,7 @@ function Header({ setCoords }) {
           </Typography>
           <Autocomplete
             onLoad={(input) => setAutocomplete(input)}
-            onPlaceChanged={onPlaceChanged}
+            onPlaceChanged={handlePlaceChanged}
           >
             <Box component="div" sx={search}>
               <Box component="div" sx={searchIcon}>
