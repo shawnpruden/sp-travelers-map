@@ -1,0 +1,10 @@
+{
+  "workbench.colorCustomizations": {
+    "statusBar.background": "#d65db1",
+    "statusBar.foreground": "#15202b",
+    "statusBarItem.hoverBackground": "#cc349d",
+    "statusBarItem.remoteBackground": "#d65db1",
+    "statusBarItem.remoteForeground": "#15202b"
+  },
+  "peacock.color": "#d65db1"
+}
